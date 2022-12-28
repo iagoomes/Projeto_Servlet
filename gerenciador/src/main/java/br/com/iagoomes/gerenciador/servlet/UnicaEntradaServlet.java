@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import br.com.iagoomes.gerenciador.acao.AlteraEmpresa;
 import br.com.iagoomes.gerenciador.acao.ListaEmpresas;
 import br.com.iagoomes.gerenciador.acao.MostraEmpresa;
 import br.com.iagoomes.gerenciador.acao.RemoveEmpresa;
@@ -34,6 +35,10 @@ public class UnicaEntradaServlet extends HttpServlet {
 			MostraEmpresa acao = new MostraEmpresa();
 			acao.executa(request, response);
 
+		} else if (paramAcao.equals("alteraEmpresa")) {
+			AlteraEmpresa acao = new AlteraEmpresa();
+			acao.executa(request, response);
+			
 		}
 	}
 
