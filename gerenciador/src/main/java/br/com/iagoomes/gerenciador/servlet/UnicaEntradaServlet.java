@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.com.iagoomes.gerenciador.acao.ListaEmpresas;
+import br.com.iagoomes.gerenciador.acao.MostraEmpresa;
+import br.com.iagoomes.gerenciador.acao.RemoveEmpresa;
 
 @WebServlet("/entrada")
 public class UnicaEntradaServlet extends HttpServlet {
@@ -20,15 +22,18 @@ public class UnicaEntradaServlet extends HttpServlet {
 		String paramAcao = request.getParameter("acao");
 
 		if (paramAcao.equals("listaEmpresas")) {
-			System.out.println("Listando empresas");
-			
 			ListaEmpresas acao = new ListaEmpresas();
 			acao.executa(request, response);
 
 		} else if (paramAcao.equals("removeEmpresa")) {
-			System.out.println("Removendo empresa");
+			System.out.println("passei");
+			RemoveEmpresa acao = new RemoveEmpresa();
+			acao.executa(request, response);
+
 		} else if (paramAcao.equals("mostraEmpresa")) {
-			System.out.println("Mostrando dados da empresa");
+			MostraEmpresa acao = new MostraEmpresa();
+			acao.executa(request, response);
+
 		}
 	}
 

@@ -14,7 +14,8 @@ import br.com.iagoomes.gerenciador.modelo.Empresa;
 public class ListaEmpresas {
 	
 	public void executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+		System.out.println("Listando empresas");
+		
 		List<Empresa> empresas = Banco.getEmpresas();
 
 		request.setAttribute("empresas", empresas);

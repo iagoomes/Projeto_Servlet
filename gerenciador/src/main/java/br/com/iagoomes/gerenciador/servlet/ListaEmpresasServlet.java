@@ -14,7 +14,7 @@ import br.com.iagoomes.gerenciador.modelo.Banco;
 import br.com.iagoomes.gerenciador.modelo.Empresa;
 
 
-@WebServlet("/listaEmpresas")
+//@WebServlet("/listaEmpresas")
 public class ListaEmpresasServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

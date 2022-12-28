@@ -1,23 +1,20 @@
-package br.com.iagoomes.gerenciador.servlet;
+package br.com.iagoomes.gerenciador.acao;
 
 import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.com.iagoomes.gerenciador.modelo.Banco;
 import br.com.iagoomes.gerenciador.modelo.Empresa;
 
-
-//@WebServlet("/mostraEmpresa")
-public class MostraEmpresaServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+public class MostraEmpresa {
+	
+	public void executa(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+		System.out.println("Mostrando dados da empresa");
+		
 		Integer idEmpresa = Integer.parseInt(request.getParameter("id"));
 		
 		Empresa empresa = Banco.buscaEmpresaPorId(idEmpresa);
@@ -28,5 +25,4 @@ public class MostraEmpresaServlet extends HttpServlet {
 		RequestDispatcher rd = request.getRequestDispatcher("/formAlteraEmpresa.jsp");
 		rd.forward(request, response);
 	}
-
 }

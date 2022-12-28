@@ -17,7 +17,7 @@ import br.com.iagoomes.gerenciador.modelo.Empresa;
 /**
  * Servlet implementation class AlteraEmpresaServlet
  */
-@WebServlet("/alteraEmpresa")
+//@WebServlet("/alteraEmpresa")
 public class AlteraEmpresaServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
