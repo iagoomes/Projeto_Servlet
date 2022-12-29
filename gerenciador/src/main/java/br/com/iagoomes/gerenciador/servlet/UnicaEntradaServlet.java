@@ -2,6 +2,7 @@ package br.com.iagoomes.gerenciador.servlet;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -22,15 +23,15 @@ public class UnicaEntradaServlet extends HttpServlet {
 			throws ServletException, IOException {
 
 		String paramAcao = request.getParameter("acao");
+		String uri = null;
 
 		if (paramAcao.equals("listaEmpresas")) {
 			ListaEmpresas acao = new ListaEmpresas();
-			acao.executa(request, response);
+			uri = acao.executa(request, response);
 
 		} else if (paramAcao.equals("removeEmpresa")) {
-			System.out.println("passei");
 			RemoveEmpresa acao = new RemoveEmpresa();
-			acao.executa(request, response);
+			uri = acao.executa(request, response);
 
 		} else if (paramAcao.equals("mostraEmpresa")) {
 			MostraEmpresa acao = new MostraEmpresa();
@@ -39,12 +40,22 @@ public class UnicaEntradaServlet extends HttpServlet {
 		} else if (paramAcao.equals("alteraEmpresa")) {
 			AlteraEmpresa acao = new AlteraEmpresa();
 			acao.executa(request, response);
-			
+
 		} else if (paramAcao.equals("novaEmpresa")) {
 			NovaEmpresa acao = new NovaEmpresa();
 			acao.executa(request, response);
-			
+
 		}
+
+		String tipoEEndereco[] = uri.split(":");
+
+		if (tipoEEndereco[0].equals("forward")) {
+			RequestDispatcher rd = request.getRequestDispatcher(tipoEEndereco[1]);
+			rd.forward(request, response);
+		} else {
+			response.sendRedirect(tipoEEndereco[1]);
+		}
+
 	}
 
 }
