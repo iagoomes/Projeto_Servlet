@@ -35,15 +35,15 @@ public class UnicaEntradaServlet extends HttpServlet {
 
 		} else if (paramAcao.equals("mostraEmpresa")) {
 			MostraEmpresa acao = new MostraEmpresa();
-			acao.executa(request, response);
+			uri = acao.executa(request, response);
 
 		} else if (paramAcao.equals("alteraEmpresa")) {
 			AlteraEmpresa acao = new AlteraEmpresa();
-			acao.executa(request, response);
+			uri = acao.executa(request, response);
 
 		} else if (paramAcao.equals("novaEmpresa")) {
 			NovaEmpresa acao = new NovaEmpresa();
-			acao.executa(request, response);
+			uri = acao.executa(request, response);
 
 		}
 

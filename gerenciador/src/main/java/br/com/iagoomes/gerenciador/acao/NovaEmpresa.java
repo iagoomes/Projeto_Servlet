@@ -14,7 +14,7 @@ import br.com.iagoomes.gerenciador.modelo.Empresa;
 
 public class NovaEmpresa {
 	
-	public void executa(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+	public String executa(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		System.out.println("Cadastrando nova empresa");
 
 		String nomeEmpresa = request.getParameter("nome");
@@ -37,7 +37,8 @@ public class NovaEmpresa {
 		banco.adiciona(empresa);
 		
 		request.setAttribute("empresa", empresa.getNome());
-		response.sendRedirect("entrada?acao=listaEmpresas");
+		
+		return "forward:entrada?acao=listaEmpresas";
 		
 	}
 }

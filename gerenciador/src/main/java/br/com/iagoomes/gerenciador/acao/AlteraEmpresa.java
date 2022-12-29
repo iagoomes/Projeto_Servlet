@@ -13,34 +13,32 @@ import br.com.iagoomes.gerenciador.modelo.Banco;
 import br.com.iagoomes.gerenciador.modelo.Empresa;
 
 public class AlteraEmpresa {
-	
-	public void executa(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-		
+
+	public String executa(HttpServletRequest request, HttpServletResponse response)
+			throws IOException, ServletException {
+
 		String nomeEmpresa = request.getParameter("nome");
 		String paramDataEmpresa = request.getParameter("data");
 		String paramId = request.getParameter("id");
 		Integer id = Integer.valueOf(paramId);
-		
+
 		System.out.println("Acao altera empresa " + id);
-		
+
 		Date dataAbertura = null;
-		
+
 		try {
 			SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 			dataAbertura = sdf.parse(paramDataEmpresa);
 		} catch (ParseException e) {
 			throw new ServletException(e);
 		}
-		
-		System.out.println(id);
-		
+
 		Empresa empresa = Banco.buscaEmpresaPorId(id);
-		
+
 		empresa.setNome(nomeEmpresa);
 		empresa.setDataAbertura(dataAbertura);
-		
-		
-		response.sendRedirect("entrada?acao=listaEmpresas");
-		
+
+		return "redirect:entrada?acao=listaEmpresas";
+
 	}
 }

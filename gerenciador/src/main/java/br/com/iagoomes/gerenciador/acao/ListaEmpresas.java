@@ -11,14 +11,15 @@ import br.com.iagoomes.gerenciador.modelo.Banco;
 import br.com.iagoomes.gerenciador.modelo.Empresa;
 
 public class ListaEmpresas {
-	
-	public String executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+	public String executa(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		System.out.println("Listando empresas");
-		
+
 		List<Empresa> empresas = Banco.getEmpresas();
 
 		request.setAttribute("empresas", empresas);
-		
-		return "forward:listaEmpresas.jsp"; 
+
+		return "forward:listaEmpresas.jsp";
 	}
 }
