@@ -1,3 +1,7 @@
 INDEX VERSION 1.131
+C:\GIT\Projeto_Servlet\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2674928255.index
+\gerenciador\src\main\java
+C:\GIT\Projeto_Servlet\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3216619146.index
+\gerenciador\src\main\java
 C:\GIT\Projeto_Servlet\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\141730439.index
 \gerenciador\src\main\java
