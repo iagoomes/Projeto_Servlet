@@ -38,7 +38,7 @@ public class NovaEmpresa {
 		
 		request.setAttribute("empresa", empresa.getNome());
 		
-		return "forward:entrada?acao=listaEmpresas";
+		return "redirect:entrada?acao=listaEmpresas";
 		
 	}
 }
