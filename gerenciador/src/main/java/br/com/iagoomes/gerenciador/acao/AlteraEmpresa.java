@@ -12,8 +12,9 @@ import javax.servlet.http.HttpServletResponse;
 import br.com.iagoomes.gerenciador.modelo.Banco;
 import br.com.iagoomes.gerenciador.modelo.Empresa;
 
-public class AlteraEmpresa {
-
+public class AlteraEmpresa implements Acao{
+	
+	@Override
 	public String executa(HttpServletRequest request, HttpServletResponse response)
 			throws IOException, ServletException {
 
@@ -38,7 +39,7 @@ public class AlteraEmpresa {
 		empresa.setNome(nomeEmpresa);
 		empresa.setDataAbertura(dataAbertura);
 
-		return "redirect:entrada?acao=listaEmpresas";
+		return "redirect:entrada?acao=ListaEmpresas";
 
 	}
 }

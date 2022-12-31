@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import br.com.iagoomes.gerenciador.acao.Acao;
 import br.com.iagoomes.gerenciador.acao.AlteraEmpresa;
 import br.com.iagoomes.gerenciador.acao.ListaEmpresas;
 import br.com.iagoomes.gerenciador.acao.MostraEmpresa;
@@ -24,33 +25,46 @@ public class UnicaEntradaServlet extends HttpServlet {
 			throws ServletException, IOException {
 
 		String paramAcao = request.getParameter("acao");
-		String uri = null;
-
-		if (paramAcao.equals("listaEmpresas")) {
-			ListaEmpresas acao = new ListaEmpresas();
+		
+		String nomeDaClasse = "br.com.iagoomes.gerenciador.acao." + paramAcao;
+		
+		String uri= null;
+		
+		try {
+			Class classe = Class.forName(nomeDaClasse);
+			Acao acao =  (Acao)  classe.newInstance();			
 			uri = acao.executa(request, response);
-
-		} else if (paramAcao.equals("removeEmpresa")) {
-			RemoveEmpresa acao = new RemoveEmpresa();
-			uri = acao.executa(request, response);
-
-		} else if (paramAcao.equals("mostraEmpresa")) {
-			MostraEmpresa acao = new MostraEmpresa();
-			uri = acao.executa(request, response);
-
-		} else if (paramAcao.equals("alteraEmpresa")) {
-			AlteraEmpresa acao = new AlteraEmpresa();
-			uri = acao.executa(request, response);
-
-		} else if (paramAcao.equals("novaEmpresa")) {
-			NovaEmpresa acao = new NovaEmpresa();
-			uri = acao.executa(request, response);
-
-		} else if (paramAcao.equals("novaEmpresaForm")) {
-			NovaEmpresaForm acao = new NovaEmpresaForm();
-			uri = acao.executa(request, response);
-
+		} catch (ClassNotFoundException | InstantiationException | IllegalAccessException | ServletException | IOException e) {
+			throw new ServletException();
 		}
+
+		//CODIGO REFATORADO ACIMA
+//		String uri = null;
+//		if (paramAcao.equals("ListaEmpresas")) {
+//			ListaEmpresas acao = new ListaEmpresas();
+//			uri = acao.executa(request, response);
+//
+//		} else if (paramAcao.equals("RemoveEmpresa")) {
+//			RemoveEmpresa acao = new RemoveEmpresa();
+//			uri = acao.executa(request, response);
+//
+//		} else if (paramAcao.equals("MostraEmpresa")) {
+//			MostraEmpresa acao = new MostraEmpresa();
+//			uri = acao.executa(request, response);
+//
+//		} else if (paramAcao.equals("AlteraEmpresa")) {
+//			AlteraEmpresa acao = new AlteraEmpresa();
+//			uri = acao.executa(request, response);
+//
+//		} else if (paramAcao.equals("NovaEmpresa")) {
+//			NovaEmpresa acao = new NovaEmpresa();
+//			uri = acao.executa(request, response);
+//
+//		} else if (paramAcao.equals("NovaEmpresaForm")) {
+//			NovaEmpresaForm acao = new NovaEmpresaForm();
+//			uri = acao.executa(request, response);
+//
+//		}
 
 		String tipoEEndereco[] = uri.split(":");
 

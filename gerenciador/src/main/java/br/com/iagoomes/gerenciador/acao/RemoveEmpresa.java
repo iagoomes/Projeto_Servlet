@@ -7,15 +7,16 @@ import javax.servlet.http.HttpServletResponse;
 
 import br.com.iagoomes.gerenciador.modelo.Banco;
 
-public class RemoveEmpresa {
+public class RemoveEmpresa implements Acao{
 	
+	@Override
 	public String executa(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		System.out.println("Removendo empresa");
 		
 		Integer idEmpresa = Integer.parseInt(request.getParameter("id"));
 		Banco.removeEmpresa(idEmpresa);
 		
-		return "redirect:entrada?acao=listaEmpresas";
+		return "redirect:entrada?acao=ListaEmpresas";
 		
 	}
 }

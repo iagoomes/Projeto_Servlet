@@ -9,8 +9,9 @@ import javax.servlet.http.HttpServletResponse;
 import br.com.iagoomes.gerenciador.modelo.Banco;
 import br.com.iagoomes.gerenciador.modelo.Empresa;
 
-public class MostraEmpresa {
+public class MostraEmpresa implements Acao {
 
+	@Override
 	public String executa(HttpServletRequest request, HttpServletResponse response)
 			throws IOException, ServletException {
 		System.out.println("Mostrando dados da empresa");
