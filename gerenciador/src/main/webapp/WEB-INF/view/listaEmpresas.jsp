@@ -12,7 +12,8 @@
 <title>Java Standard taglib</title>
 </head>
 <body>
-
+	
+	<h2>Usuario logado: ${usuarioLogado.login}</h2>
 
 	<c:if test="${not empty empresa}">
 		Empresa ${empresa} cadastrada com sucesso!
@@ -20,7 +21,7 @@
 	
 
 	<c:if test="${not empty empresas}">
-		<h1>Lista de Empresas:</h1>
+		<h3>Lista de Empresas:</h3>
 
 		<ul>
 			<c:forEach items="${empresas}" var="empresa">

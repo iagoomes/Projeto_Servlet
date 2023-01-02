@@ -10,12 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.com.iagoomes.gerenciador.acao.Acao;
-import br.com.iagoomes.gerenciador.acao.AlteraEmpresa;
-import br.com.iagoomes.gerenciador.acao.ListaEmpresas;
-import br.com.iagoomes.gerenciador.acao.MostraEmpresa;
-import br.com.iagoomes.gerenciador.acao.NovaEmpresa;
-import br.com.iagoomes.gerenciador.acao.NovaEmpresaForm;
-import br.com.iagoomes.gerenciador.acao.RemoveEmpresa;
 
 @WebServlet("/entrada")
 public class UnicaEntradaServlet extends HttpServlet {
