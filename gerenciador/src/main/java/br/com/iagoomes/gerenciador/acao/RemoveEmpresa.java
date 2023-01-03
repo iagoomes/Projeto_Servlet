@@ -11,7 +11,7 @@ public class RemoveEmpresa implements Acao{
 	
 	@Override
 	public String executa(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		System.out.println("Removendo empresa");
+		//System.out.println("Removendo empresa");
 		
 		Integer idEmpresa = Integer.parseInt(request.getParameter("id"));
 		Banco.removeEmpresa(idEmpresa);

@@ -14,13 +14,13 @@ public class MostraEmpresa implements Acao {
 	@Override
 	public String executa(HttpServletRequest request, HttpServletResponse response)
 			throws IOException, ServletException {
-		System.out.println("Mostrando dados da empresa");
+		//System.out.println("Mostrando dados da empresa");
 
 		Integer idEmpresa = Integer.parseInt(request.getParameter("id"));
 
 		Empresa empresa = Banco.buscaEmpresaPorId(idEmpresa);
 
-		System.out.println(empresa.getNome());
+		//System.out.println(empresa.getNome());
 
 		request.setAttribute("empresa", empresa);
 

@@ -16,7 +16,7 @@ public class NovaEmpresa implements Acao {
 	
 	@Override
 	public String executa(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-		System.out.println("Cadastrando nova empresa");
+		//System.out.println("Cadastrando nova empresa");
 
 		String nomeEmpresa = request.getParameter("nome");
 		String paramDataEmpresa = request.getParameter("data");

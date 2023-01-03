@@ -23,7 +23,7 @@ public class AlteraEmpresa implements Acao{
 		String paramId = request.getParameter("id");
 		Integer id = Integer.valueOf(paramId);
 
-		System.out.println("Acao altera empresa " + id);
+		//System.out.println("Acao altera empresa " + id);
 
 		Date dataAbertura = null;
 
