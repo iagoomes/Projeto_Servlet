@@ -16,7 +16,7 @@ import br.com.iagoomes.gerenciador.modelo.Empresa;
 
 
 @WebServlet("/Empresas")
-public class EmpresasService extends HttpServlet {
+public class EmpresasService2 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -27,7 +27,7 @@ public class EmpresasService extends HttpServlet {
 		String json = gson.toJson(empresas);
 		
 		response.setContentType("application/json");
-		response.getWriter().print(json);
+		response.getWriter().print(json);;
 	}
 
 }
