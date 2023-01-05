@@ -1,8 +1,13 @@
 INDEX VERSION 1.131+C:\GIT\Projeto_Servlet\.metadata\.plugins\org.eclipse.jdt.core
 1812955401.index
+<<<<<<< HEAD
 3718923477.index
 4067227886.index
 3766800477.index
+=======
+3766800477.index
+4067227886.index
+>>>>>>> parent of f34a1bb (Implementacao do web service - EmpresasService - json)
 862150220.index
 1019840325.index
 3826946525.index
@@ -10,14 +15,22 @@ INDEX VERSION 1.131+C:\GIT\Projeto_Servlet\.metadata\.plugins\org.eclipse.jdt.co
 2397671296.index
 1123563850.index
 2097641696.index
+<<<<<<< HEAD
 3032558595.index
 373012864.index
+=======
+373012864.index
+3032558595.index
+>>>>>>> parent of f34a1bb (Implementacao do web service - EmpresasService - json)
 3981328295.index
 2302438857.index
 4081271029.index
 1865797976.index
 3035067787.index
+<<<<<<< HEAD
 1846691866.index
+=======
+>>>>>>> parent of f34a1bb (Implementacao do web service - EmpresasService - json)
 1093230490.index
 406140610.index
 3061581891.index
@@ -27,6 +40,10 @@ INDEX VERSION 1.131+C:\GIT\Projeto_Servlet\.metadata\.plugins\org.eclipse.jdt.co
 2268015921.index
 2128575829.index
 771485104.index
+<<<<<<< HEAD
+=======
+2870919431.index
+>>>>>>> parent of f34a1bb (Implementacao do web service - EmpresasService - json)
 1689725919.index
 2383925773.index
 456790899.index
