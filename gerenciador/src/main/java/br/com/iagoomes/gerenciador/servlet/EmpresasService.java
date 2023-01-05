@@ -27,7 +27,7 @@ public class EmpresasService extends HttpServlet {
 		String json = gson.toJson(empresas);
 		
 		response.setContentType("application/json");
-		response.getWriter().print(json);
+		response.getWriter().print(json);;
 	}
 
 }
